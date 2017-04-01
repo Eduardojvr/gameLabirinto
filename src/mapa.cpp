@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
-#include "/home/eduardo/Documentos/Orientação à Objetos/Projeto_01/inc/mapa.hpp"
+#include "/home/eduardo/Documentos/Orientação à Objetos/projeto_01/inc/mapa.hpp"
 
 Mapa::Mapa(){
   linhas = 18;
@@ -17,7 +17,7 @@ int Mapa::getColunas(){
   return this->colunas;
 }
 
-void Mapa::lerMapa(){
+/*void Mapa::lerMapa(){
   char m[18][73];
 char aux[80];
 FILE * mapa = fopen("mapa.txt","r");
@@ -35,4 +35,4 @@ for(i=0;i<17;i++){
     printf("\n");
 }
 
-}
+}*/

@@ -1,6 +1,9 @@
-#include "/home/eduardo/Documentos/Orientação à Objetos/Projeto_01/inc/player.hpp"
+#include "/home/eduardo/Documentos/Orientação à Objetos/projeto_01/inc/player.hpp"
 
-
+Player::Player(){
+  setX(1);
+  setY(0);
+}
 bool Player::getAlive(){
   return this->alive;
 }

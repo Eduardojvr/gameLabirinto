@@ -3,13 +3,15 @@
 #include "gameObject.hpp"
 #include <string>
 using namespace std;
-class Player:GameObject{
+
+class Player:public GameObject{
 private:
   string nome;
   bool alive;
   int pontos;
   bool venceu;
 public:
+  Player();
 string getNome();
 void setNome(string nome);
 bool getAlive();
@@ -19,7 +21,6 @@ void setPontos(int p);
 bool getVenceu();
 void setVenceu(bool v);
 void escolherPlayer();
-
 };
 
 

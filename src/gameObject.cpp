@@ -1,5 +1,5 @@
 
-#include "/home/eduardo/Documentos/Orientação à Objetos/Projeto_01/inc/gameObject.hpp"
+#include "/home/eduardo/Documentos/Orientação à Objetos/projeto_01/inc/gameObject.hpp"
 
 GameObject::GameObject(){
   x=0;
