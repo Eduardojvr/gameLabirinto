@@ -3,6 +3,9 @@
 Player::Player(){
   setX(1);
   setY(0);
+  setAlive(true);
+  //setVenceu(true);
+  venceu = true;
 }
 bool Player::getAlive(){
   return this->alive;
@@ -32,14 +35,14 @@ void Player::setVenceu(bool v){
 
 void Player::escolherPlayer(){
   int op;
-  cout<<"Escolha um player\n"<<"[1]- @\n"<<"[2]- ~\n"<<"[3]- >"<<endl;
+  cout<<"Escolha um player\n"<<"[1]- @\n"<<"[2]- }\n"<<"[3]- >"<<endl;
   cin>>op;
   switch (op) {
     case 1:
       setObjeto('@');
       break;
     case 2:
-        setObjeto('~');
+        setObjeto('}');
         break;
     case 3:
         setObjeto('>');
