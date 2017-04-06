@@ -2,10 +2,11 @@
 #define ARMADILHA_HPP
 #include "gameObject.hpp"
 using namespace std;
-class Armadilha:GameObject{
+class Armadilha:public GameObject{
 private:
   int perda;
 public:
+  Armadilha();
   int getPerda();
   void setPerda(int p);
   void escolherPlayer();

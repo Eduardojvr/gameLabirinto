@@ -1,9 +1,10 @@
-#include "/home/eduardo/Documentos/Orientação à Objetos/projeto_01/inc/player.hpp"
+#include "player.hpp"
 
 Player::Player(){
   setX(1);
   setY(0);
   setAlive(true);
+  pontos = 0;
   //setVenceu(true);
   venceu = true;
 }
@@ -23,7 +24,7 @@ int Player::getPontos(){
   return this->pontos;
 }
 void Player::setPontos(int p){
-  this->pontos = pontos;
+  this->pontos = p;
 }
 
 bool Player::getVenceu(){
@@ -36,6 +37,7 @@ void Player::setVenceu(bool v){
 void Player::escolherPlayer(){
   int op;
   cout<<"Escolha um player\n"<<"[1]- @\n"<<"[2]- }\n"<<"[3]- >"<<endl;
+  cout<<"Op:";
   cin>>op;
   switch (op) {
     case 1:

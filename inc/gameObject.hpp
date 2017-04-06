@@ -7,17 +7,16 @@
 using namespace std;
 class GameObject{
 private:
-  int x;
-  int y;
+  int x,y;
   char objeto;
 public:
   GameObject();
-  void setX(int x);
-  int getX();
-  void setY(int y);
-  int getY();
-  char getObjeto();
-  void setObjeto(char o);
-  void escolherPlayer();
+virtual void escolherPlayer()=0;
+virtual int getX();
+virtual int getY();
+virtual void setX(int x);
+virtual void setY(int y);
+virtual char getObjeto();
+virtual void setObjeto(char o);
 };
 #endif

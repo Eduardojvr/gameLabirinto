@@ -1,12 +1,12 @@
-#include "/home/eduardo/Documentos/Orientação à Objetos/projeto_01/inc/armadilha.hpp"
+#include "armadilha.hpp"
 
 Armadilha::Armadilha(){
   setX(3);
   setY(0);
-  setObjeto('X'); 
+  setObjeto('X');
 }
 void Armadilha::setPerda(int p){
-  this->perda = getPerda()-1;
+  this->perda = getPerda()-3;
 }
 int Armadilha::getPerda(){
   return this->perda;

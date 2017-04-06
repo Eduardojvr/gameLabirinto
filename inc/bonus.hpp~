@@ -3,9 +3,8 @@
 #include "gameObject.hpp"
 using namespace std;
 class Bonus:public GameObject{
-private:
   int bonus;
-public:
+
 int getBonus();
 void setBonus(int b);
 void escolherPlayer();
