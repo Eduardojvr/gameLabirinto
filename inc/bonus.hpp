@@ -6,6 +6,7 @@ class Bonus:public GameObject{
 private:
   int bonus;
 public:
+  Bonus();
 int getBonus();
 void setBonus(int b);
 void escolherPlayer();

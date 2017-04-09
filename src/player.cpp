@@ -3,16 +3,15 @@
 Player::Player(){
   setX(1);
   setY(0);
-  setAlive(true);
-  pontos = 0;
-  //setVenceu(true);
-  venceu = true;
+  setVivo(true);
+  setVenceu(false);
+  setPontos(0);
 }
-bool Player::getAlive(){
-  return this->alive;
+bool Player::getVivo(){
+  return this->vivo;
 }
-void Player::setAlive(bool a){
-  this->alive = a;
+void Player::setVivo(bool a){
+  this->vivo = a;
 }
 void Player::setNome(string nome){
   this->nome = nome;

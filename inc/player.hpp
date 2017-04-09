@@ -7,15 +7,15 @@ using namespace std;
 class Player:public GameObject{
 private:
   string nome;
-  bool alive;
+  bool vivo;
   int pontos;
   bool venceu;
 public:
   Player();
 string getNome();
 void setNome(string nome);
-bool getAlive();
-void setAlive(bool a);
+bool getVivo();
+void setVivo(bool a);
 int getPontos();
 void setPontos(int p);
 bool getVenceu();

@@ -4,7 +4,7 @@ CFLAGS := -Wall
 SRCFILES := $(wildcard src/*.cpp) 
 
 all: $(SRCFILES:src/%.cpp=obj/%.o)
-	$(CC) $(CFLAGS) obj/*.o -o bin/saida -lncurses 
+	$(CC) $(CFLAGS) -lncurses  obj/*.o -o bin/saida  
 
 obj/%.o : src/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@ -I./inc
