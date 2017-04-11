@@ -6,6 +6,13 @@ Player::Player(){
   setVivo(true);
   setVenceu(false);
   setPontos(0);
+  setVidas(3);
+}
+int Player::getVidas(){
+  return this->vidas;
+}
+void Player::setVidas(int vidas){
+  this->vidas=vidas;
 }
 bool Player::getVivo(){
   return this->vivo;

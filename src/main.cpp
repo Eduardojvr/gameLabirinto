@@ -60,10 +60,14 @@ switch (op) {
     system("clear");
     cout<<"Nível de dificuldade [1-17]\nDigite o nível:";
     cin>>dif;
+    if(dif>17 || dif<1){
+      cout<<"Nível de dificuldade inválido!\n";
+      exit(0);
+    }
   break;
   case 2:
     system("clear");
-    cout<<"#Conquiste 100 pontos pegando '+' e saia \ndo labirinto para vencer!\n\n\n[Tecle enter para voltar ao menu]";
+    cout<<"-Conquiste 100 pontos pegando '+' e saia \ndo labirinto para vencer!\n\n\n[Tecle enter para voltar ao menu]";
     setbuf(stdin,NULL);
     getchar();
   break;
@@ -86,8 +90,6 @@ switch (op) {
 for(int i=0;i<dif;i++){
   p[i] = new Armadilha();
 }
-
-
 
 
 while (jog->getVivo() != false) {
@@ -123,7 +125,10 @@ for(int i=0;i<5;i++){
 
 for(int i=0;i<dif;i++){
   if(p[i]->getX() == jog->getX() && p[i]->getY() == jog->getY()){
-      jog->setVivo(false);
+      jog->setVidas(jog->getVidas()-1);
+      if(jog->getVidas() == 0){
+        jog->setVivo(false);
+      }
       break;
   }
 }
@@ -141,7 +146,7 @@ clear();
   }
   printw("\n");
 }
-printw("\nPontos: %d",jog->getPontos());
+printw("\n----------\nPontos: %d\nVidas:  %d\n----------\n",jog->getPontos(),jog->getVidas());
 
 for(int i=0;i<dif;i++){
   if(m[p[i]->getX()][p[i]->getY()] !='#'){
@@ -195,12 +200,22 @@ for(int q=0;q<dif;q++){
     m[jog->getX()+1][jog->getY()] =' ';
   }
 
+if(jog->getPontos() >= 100 && jog->getX() == 16 && (jog->getY()==22 || jog->getY()==23 || jog->getY()==24 || jog->getY()==25)){
+  jog->setVenceu(true);
+  break;
+}
+
   endwin();
 }
+endwin();
 if(jog->getVenceu() == false){
-  cout<<"Você perdeu!\n";
+  system("clear");
+  cout<<"#########################\n      Você perdeu 8-(\n#########################";
+}else{
+  system("clear");
+  cout<<"#########################\n      Você venceu 8-)\n#########################";
 }
-cout<<jog->getPontos()<<endl;
+printf("\n\nPontos obtidos:   %d\nVidas              %d\n\n\n\n\n",jog->getPontos(),jog->getVidas());
 
   return 0;
 

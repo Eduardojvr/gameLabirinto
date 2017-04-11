@@ -10,6 +10,7 @@ private:
   bool vivo;
   int pontos;
   bool venceu;
+  int vidas;
 public:
   Player();
 string getNome();
@@ -21,6 +22,8 @@ void setPontos(int p);
 bool getVenceu();
 void setVenceu(bool v);
 void escolherPlayer();
+void setVidas(int vidas);
+int getVidas();
 };
 
 
