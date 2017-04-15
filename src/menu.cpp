@@ -2,7 +2,7 @@
 
 
 
-int Menu::menuJogo(Player * jog,Registros * reg,int cont){
+int Menu::menuJogo(Player * jog,Registros * reg,int cont,int so){
   string nome;
   int op,dif;
 do{
@@ -19,6 +19,7 @@ switch (op) {
     system("clear");
     cout<<"Jogador: "<<jog->getNome()<<"\n";
     jog->escolherPlayer();
+
     system("clear");
     cout<<"Nível de dificuldade [1-17]\nDigite o nível:";
     cin>>dif;
@@ -31,15 +32,21 @@ switch (op) {
   case 2:
     system("clear");
     cout<<"=========================\n        Objetivos\n=========================\n";
+if(so==1){
+  cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 20\n\n[Enter] para voltar ao menu\n";
+  setbuf(stdin,NULL);
+  getchar();
+}
+if(so==2){
     if(cont < 1){
-      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\n\n\n[Enter] para voltar ao menu\n";
+      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 20\n\n[Enter] para voltar ao menu\n";
       setbuf(stdin,NULL);
       getchar();
     }else{
-      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\n\n\n";
+      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 20\n";
     }
-    system("clear");
-
+    //system("clear");
+  }
   break;
   case 3:
     system("clear");
@@ -48,12 +55,19 @@ switch (op) {
     if(reg->getQtd() == 0){
       cout<<"Sem registro de jogos!\n";
     }
+    if(so==1){
+      cout<<"[Enter] para voltar ao menu!\n";
+      setbuf(stdin,NULL);
+      getchar();
+    }
+    if(so==2){
     if(cont < 1){
       cout<<"[Enter] para voltar ao menu!\n";
       setbuf(stdin,NULL);
       getchar();
     }
       system("clear");
+  }
   break;
   case 4:
     exit(0);

@@ -1,16 +1,4 @@
-ed
-10
-pedro
-0
-marcos
-0
-d
-80
-s
-10
-d
-10
-d
-20
-f
+eduardo junio
+50
+Ana
 0

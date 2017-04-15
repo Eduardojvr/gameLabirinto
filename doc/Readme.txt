@@ -5,7 +5,7 @@ no minimo 100 pontos.
 
 -Tela inicial
    Na tela inicial do jogo, o usuário deve escolher uma dentre as opções do menu, que são:
-	[1]-Jogar (serão pedidos dados como nome e player(personagem) do jogador)
+	[1]-Jogar (serão pedidos dados como nome,player(personagem) do jogador e sistema operacional)
 	[2]-Regras do jogo
 	[3]-Ranking
 	[4]-Sair
@@ -21,3 +21,7 @@ no minimo 100 pontos.
     Para compilar e executar o jogo, basta abrir o terminal do computador,”navegar” até a pasta onde
 esta localizado o jogo, digitar “make” e esperar o termino da compilação.Logo em seguida, digite o comando 
 “make run” e jogo sera iniciado.
+
+-Possiveis erros
+	Em caso de erro na compilação, digite no terminal “make clean”.O erro pode ser causado pela compilação
+em sistemas operacionais distintos.

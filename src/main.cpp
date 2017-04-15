@@ -18,9 +18,9 @@ int posiciona(int mod){
 }
 
 int main(int argc, char ** argv){
-  int cont=0;
+  int cont=0,so=1;
   do{
-      int movimento,dif=0,controle;
+      int movimento,dif=0,controle=0;
       char  ** m =(char**)malloc(sizeof(char*)*17);
       Player * jog = new Player();
       Armadilha * p[17];
@@ -32,7 +32,10 @@ int main(int argc, char ** argv){
       for(int i=0;i<5;i++){
         bon[i] = new Bonus();
       }
-      dif = menu->menuJogo(jog,reg,cont);
+      dif = menu->menuJogo(jog,reg,cont,so);
+      system("clear");
+      cout<<"[1]-Linux\n[2]-Mac Os\nDigite a opção do seu sistema: ";
+      cin>>so;
       mapa->lerMapa(m);
 
       for(int i=0;i<dif;i++){
@@ -108,7 +111,7 @@ int main(int argc, char ** argv){
         for(int i=0;i<17;i++){
           for(int j=0;j<73;j++){
             bon[q]->setX(posiciona(17));
-            bon[q]->setY(posiciona(73));
+            bon[q]->setY(posiciona(72));
           }
         }
       }
@@ -143,8 +146,6 @@ int main(int argc, char ** argv){
   jog->resultado();
 
   delete(m);
-  //delete(p);
-  //delete(bon);
   delete(menu);
   delete(mapa);
   delete(des);

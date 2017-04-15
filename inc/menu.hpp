@@ -7,6 +7,6 @@
 using namespace std;
 class Menu{
 public:
-  int menuJogo(Player * jog,Registros * reg,int cont);
+  int menuJogo(Player * jog,Registros * reg,int cont,int so );
 };
 #endif
