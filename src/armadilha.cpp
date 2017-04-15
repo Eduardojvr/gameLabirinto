@@ -8,6 +8,7 @@ Armadilha::Armadilha(){
 void Armadilha::setPerda(int p){
   this->perda = getPerda()-3;
 }
+
 int Armadilha::getPerda(){
   return this->perda;
 }

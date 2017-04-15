@@ -2,11 +2,14 @@
 
 Player::Player(){
   setX(1);
-  setY(0);
+  setY(1);
   setVivo(true);
   setVenceu(false);
   setPontos(0);
   setVidas(3);
+}
+Player::~Player(){
+
 }
 int Player::getVidas(){
   return this->vidas;
@@ -55,5 +58,52 @@ void Player::escolherPlayer(){
     case 3:
         setObjeto('>');
           break;
+  }
+}
+
+void Player::movimento(char ** m,char movimento){
+  if(m[getX()][getY()+1] != '#' && movimento == 'd' && m[getX()][getY()+1] != '|'){
+    setY(getY()+1);
+    m[getX()][getY()-1] =' ';
+  }else if(m[getX()][getY()-1] != '#' && movimento == 'a' && m[getX()][getY()-1] != '|'){
+    setY(getY()-1);
+    m[getX()][getY()+1] =' ';
+  }else if(m[getX()+1][getY()] !='#' && movimento == 's' && m[getX()+1][getY()] != '|'){
+    setX(getX()+1);
+    m[getX()-1][getY()] =' ';
+  }else if(m[getX()-1][getY()] !='#' && movimento == 'w' && m[getX()][getY()-1] != '|'){
+    setX(getX()-1);
+    m[getX()+1][getY()] =' ';
+  }
+}
+void Player::resultado(){
+  if(getVenceu() == false){
+    system("clear");
+    cout<<"#########################\n      Você perdeu 8-(\n#########################";
+  }else{
+    system("clear");
+    cout<<"#########################\n      Você venceu 8-)\n#########################";
+  }
+  cout<<"\n\nPontos obtidos:   "<<getPontos()<<"\nVidas             "<<getVidas()<<"\n[Enter] para voltar ao menu!"<<endl;
+  setbuf(stdin,NULL);
+  getchar();
+}
+void Player::abrePortal(char ** m){
+  if(getPontos()>=10){
+    for(int i=16;i<=16;i++){
+      for(int j=22;j<26;j++){
+        m[i][j] = ' ';
+      }
+    }
+  }
+}
+void Player::verificaPontuacao(){
+  if(getPontos() >= 10 && getX() == 16 && (getY()==22 || getY()==23 || getY()==24 || getY()==25)){
+    setVenceu(true);
+  }
+}
+void Player::posicionaJog(char ** m){
+  if(m[getX()][getY()] != '#'){
+    m[getX()][getY()]  = getObjeto();
   }
 }

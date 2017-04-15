@@ -13,6 +13,7 @@ private:
   int vidas;
 public:
   Player();
+  ~Player();
 string getNome();
 void setNome(string nome);
 bool getVivo();
@@ -24,6 +25,11 @@ void setVenceu(bool v);
 void escolherPlayer();
 void setVidas(int vidas);
 int getVidas();
+void movimento(char ** m,char movimento);
+void posicionaJog(char ** m);
+void resultado();
+void verificaPontuacao();
+void abrePortal(char ** m);
 };
 
 
