@@ -32,12 +32,14 @@ int main(int argc, char ** argv){
       for(int i=0;i<5;i++){
         bon[i] = new Bonus();
       }
+      menu->setAberto(true);
       dif = menu->menuJogo(jog,reg,cont,so);
       system("clear");
       cout<<"[1]-Linux\n[2]-Mac Os\nDigite a opção do seu sistema: ";
       cin>>so;
+      system("clear");
       mapa->lerMapa(m);
-
+      menu->setAberto(false);
       for(int i=0;i<dif;i++){
         p[i] = new Armadilha();
       }
@@ -59,23 +61,23 @@ int main(int argc, char ** argv){
       for(int i=0;i<5;i++){
         if(m[bon[i]->getX()][bon[i]->getY()] != '#' && m[bon[i]->getX()][bon[i]->getY()] != jog->getObjeto()){
           if(m[bon[i]->getX()][bon[i]->getY()] != '|' && m[bon[i]->getX()][bon[i]->getY()] != 'B'){
-            if(bon[i]->getY()%2 == 0){
+            if((bon[i]->getY()+1)%2 == 0){
               m[bon[i]->getX()][bon[i]->getY()]  = bon[i]->getObjeto();
             }
           }
         }
       }
-
+      for(int i=0;i<5;i++){
         if(m[jog->getX()][jog->getY()-1] == '+'){
-          jog->setPontos(jog->getPontos()+10);
+          jog->setPontos(jog->getPontos()+bon[i]->getBonus());
           m[jog->getX()][jog->getY()]=jog->getObjeto();
           m[jog->getX()][jog->getY()-1]='B';
           controle=30;
         }
-
+      }
       for(int i=0;i<dif;i++){
         if(p[i]->getX() == jog->getX() && p[i]->getY() == jog->getY()){
-            jog->setVidas(jog->getVidas()-1);
+            jog->setVidas(jog->getVidas()-p[i]->getPerda());
             if(jog->getVidas() == 0){
               jog->setVivo(false);
             }
@@ -87,6 +89,7 @@ int main(int argc, char ** argv){
        clear();
 
       //imprime mapa
+      des->setTela(true);
       des->draw(m,jog);
 
       for(int i=0;i<dif;i++){
@@ -141,10 +144,11 @@ int main(int argc, char ** argv){
       endwin();
    }
   endwin();
-  reg->setQtd(reg->getQtd()+1);
-  reg->registro(jog->getNome(),jog->getPontos());
+  if(jog->getVenceu() == true){
+    reg->setQtd(reg->getQtd()+1);
+    reg->registro(jog->getNome(),jog->getPontos());
+  }
   jog->resultado();
-
   delete(m);
   delete(menu);
   delete(mapa);

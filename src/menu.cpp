@@ -1,13 +1,18 @@
 #include "menu.hpp"
 
-
+bool Menu::getAberto(){
+  return aberto;
+}
+void Menu::setAberto(bool aberto){
+  this->aberto = aberto;
+}
 
 int Menu::menuJogo(Player * jog,Registros * reg,int cont,int so){
   string nome;
   int op,dif;
 do{
   system("clear");
-  cout<<"=========================\n        O Labirinto\n=========================\n[1]-Jogar\n[2]-Como jogar\n[3]-Ranking\n[4]-Sair\nOp:";
+  cout<<"=========================\n        O Labirinto\n=========================\n[1]-Jogar\n[2]-Como jogar\n[3]-Ranking\n[4]-Apagar dados de partidas\n[5]-Sair\nOp:";
 cin>>op;
 switch (op) {
   case 1:
@@ -50,7 +55,7 @@ if(so==2){
   break;
   case 3:
     system("clear");
-    cout<<"=========================\n          jogos\n=========================\n";
+    cout<<"=========================\n    Jogos com Vitória\n=========================\n";
     reg->verReg();
     if(reg->getQtd() == 0){
       cout<<"Sem registro de jogos!\n";
@@ -70,10 +75,17 @@ if(so==2){
   }
   break;
   case 4:
+    FILE * r;
+    r = fopen("./obj/registros.txt","w");
+    fclose(r);
+    reg->setQtd(0);
+    cout<<"Dados apagados!"<<endl;
+    break;
+  case 5:
     exit(0);
     break;
   default:
-      system("clear");
+      //system("clear");
       cout<<"Opção inválida!"<<endl;
       exit(0);
     break;

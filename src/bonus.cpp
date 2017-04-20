@@ -2,6 +2,7 @@
 
 Bonus::Bonus(){
   setObjeto('+');
+  bonus = 10;
 }
 
 void Bonus::setBonus(int b){

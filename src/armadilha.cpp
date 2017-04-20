@@ -3,10 +3,11 @@
 Armadilha::Armadilha(){
   setX(3);
   setY(0);
+  perda=1;
   setObjeto('X');
 }
-void Armadilha::setPerda(int p){
-  this->perda = getPerda()-3;
+void Armadilha::setPerda(int perda){
+  this->perda = perda;
 }
 
 int Armadilha::getPerda(){

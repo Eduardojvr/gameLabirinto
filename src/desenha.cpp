@@ -1,5 +1,11 @@
 #include "desenha.hpp"
 
+void Desenha::setTela(bool tela){
+  this->tela = tela;
+}
+bool Desenha::getTela(){
+  return tela;
+}
 void Desenha::draw(char ** m,Player * jog){
   for(int s=0;s<17;s++){
     for(int j=0;j<73;j++){

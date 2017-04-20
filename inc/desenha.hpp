@@ -3,9 +3,11 @@
 #include "map.hpp"
 #include <ncurses.h>
 class Desenha{
+private:
+  bool tela;
 public:
-void draw(char ** m,Player * jog);
-
-
+  void setTela(bool tela);
+  bool getTela();
+  void draw(char ** m,Player * jog);
 };
 #endif

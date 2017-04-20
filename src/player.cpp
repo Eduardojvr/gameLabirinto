@@ -9,7 +9,6 @@ Player::Player(){
   setVidas(3);
 }
 Player::~Player(){
-
 }
 int Player::getVidas(){
   return this->vidas;
@@ -82,7 +81,7 @@ void Player::resultado(){
     cout<<"#########################\n      Você perdeu 8-(\n#########################";
   }else{
     system("clear");
-    cout<<"#########################\n      Você venceu 8-)\n#########################";
+    cout<<"#########################\n      Resumo 8-)\n#########################";
   }
   cout<<"\n\nPontos obtidos:   "<<getPontos()<<"\nVidas             "<<getVidas()<<"\n[Enter] para voltar ao menu!"<<endl;
   setbuf(stdin,NULL);
