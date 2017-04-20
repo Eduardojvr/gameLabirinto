@@ -1,5 +1,9 @@
 #include "desenha.hpp"
 
+Desenha::Desenha(){
+  tela=false;
+}
+Desenha::~Desenha(){}
 void Desenha::setTela(bool tela){
   this->tela = tela;
 }

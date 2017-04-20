@@ -11,6 +11,7 @@ private:
   char objeto;
 public:
   GameObject();
+  ~GameObject();
 virtual void escolherPlayer()=0;
 virtual int getX();
 virtual int getY();

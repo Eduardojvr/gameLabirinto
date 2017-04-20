@@ -12,6 +12,7 @@ private:
   //char mBase[17][73];
 public:
   Mapa();
+  ~Mapa();
 int getLinhas();
 int getColunas();
 void lerMapa(char ** m);

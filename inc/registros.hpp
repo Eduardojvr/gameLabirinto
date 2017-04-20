@@ -10,6 +10,7 @@ private:
   int qtd;
 public:
   Registros();
+  ~Registros();
   void setQtd(int qtd);
   int getQtd();
   void registro(string nome,int pontos);
