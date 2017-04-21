@@ -4,7 +4,7 @@ Bonus::Bonus(){
   setObjeto('+');
   bonus = 10;
 }
-
+Bonus::~Bonus(){};
 void Bonus::setBonus(int b){
   this->bonus = b;
 }

@@ -5,7 +5,7 @@ Mapa::Mapa(){
   linhas = 17;
   colunas = 73;
 }
-
+Mapa::~Mapa(){}
 int Mapa::getLinhas(){
   return this->linhas;
 }

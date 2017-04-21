@@ -7,6 +7,7 @@ private:
   int bonus;
 public:
   Bonus();
+  ~Bonus();
 int getBonus();
 void setBonus(int b);
 void escolherPlayer();

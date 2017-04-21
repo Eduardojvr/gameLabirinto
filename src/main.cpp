@@ -52,7 +52,8 @@ int main(int argc, char ** argv){
         for(int i=0;i<dif;i++){
         if(m[p[i]->getX()][p[i]->getY()] != '#'){
           if(m[p[i]->getX()][p[i]->getY()] != '|'){
-            p[i]->setObjeto('X');
+            p[i]->escolherPlayer();
+            //p[i]->setObjeto('X');
             m[p[i]->getX()][p[i]->getY()]  = p[i]->getObjeto();
           }
         }
@@ -151,6 +152,7 @@ int main(int argc, char ** argv){
   jog->resultado();
   delete(m);
   delete(menu);
+  //menu->~Menu(); Funciona so para alocação estatica
   delete(mapa);
   delete(des);
   delete(reg);

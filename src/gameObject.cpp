@@ -5,7 +5,7 @@ GameObject::GameObject(){
   x=0;
   y=0;
 }
-
+GameObject::~GameObject(){}
 void GameObject::setX(int x){
   this->x=x;
 }
@@ -28,3 +28,4 @@ void GameObject::setObjeto(char o){
 char GameObject::getObjeto(){
   return this->objeto;
 }
+void GameObject::escolherPlayer(){}

@@ -7,6 +7,7 @@ private:
   int perda;
 public:
   Armadilha();
+  ~Armadilha();
   int getPerda();
   void setPerda(int p);
   void escolherPlayer();

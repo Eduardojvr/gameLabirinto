@@ -1,5 +1,8 @@
 #include "menu.hpp"
-
+Menu::Menu(){
+  aberto = false;
+}
+Menu::~Menu(){}
 bool Menu::getAberto(){
   return aberto;
 }
@@ -38,17 +41,17 @@ switch (op) {
     system("clear");
     cout<<"=========================\n        Objetivos\n=========================\n";
 if(so==1){
-  cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 20\n\n[Enter] para voltar ao menu\n";
+  cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n\n[Enter] para voltar ao menu\n";
   setbuf(stdin,NULL);
   getchar();
 }
 if(so==2){
     if(cont < 1){
-      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 20\n\n[Enter] para voltar ao menu\n";
+      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n\n[Enter] para voltar ao menu\n";
       setbuf(stdin,NULL);
       getchar();
     }else{
-      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 20\n";
+      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n";
     }
     //system("clear");
   }
@@ -77,9 +80,15 @@ if(so==2){
   case 4:
     FILE * r;
     r = fopen("./obj/registros.txt","w");
+    if(r == NULL){
+      fopen("../obj/registros.txt","w");
+    }
     fclose(r);
     reg->setQtd(0);
-    cout<<"Dados apagados!"<<endl;
+    system("clear");
+    cout<<"Dados apagados!\n[Enter] para voltar ao menu"<<endl;
+    setbuf(stdin,NULL);
+    getchar();
     break;
   case 5:
     exit(0);

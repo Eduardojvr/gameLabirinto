@@ -10,6 +10,8 @@ using namespace std;
 class Menu{
   bool aberto;
 public:
+  Menu();
+  ~Menu();
   void setAberto(bool aberto);
   bool getAberto();
   int menuJogo(Player * jog,Registros * reg,int cont,int so );

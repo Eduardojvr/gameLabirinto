@@ -8,8 +8,7 @@ Player::Player(){
   setPontos(0);
   setVidas(3);
 }
-Player::~Player(){
-}
+Player::~Player(){}
 int Player::getVidas(){
   return this->vidas;
 }

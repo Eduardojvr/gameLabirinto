@@ -3,6 +3,7 @@
 Registros::Registros(){
   setQtd(0);
 }
+Registros::~Registros(){}
 void Registros::setQtd(int qtd){
   this->qtd = qtd;
 }
