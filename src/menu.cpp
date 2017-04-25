@@ -41,17 +41,17 @@ switch (op) {
     system("clear");
     cout<<"=========================\n        Objetivos\n=========================\n";
 if(so==1){
-  cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n\n[Enter] para voltar ao menu\n";
+  cout<<"Conquiste pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n\n[Enter] para voltar ao menu\n";
   setbuf(stdin,NULL);
   getchar();
 }
 if(so==2){
     if(cont < 1){
-      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n\n[Enter] para voltar ao menu\n";
+      cout<<"Conquiste pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n\n[Enter] para voltar ao menu\n";
       setbuf(stdin,NULL);
       getchar();
     }else{
-      cout<<"Conquiste no minimo 100 pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n";
+      cout<<"Conquiste pontos \npegando '+',abra o portal e saia do \nlabirinto para vencer!\nO portal abre quando a pontuação\nfor maior ou igual a 10\n";
     }
     //system("clear");
   }

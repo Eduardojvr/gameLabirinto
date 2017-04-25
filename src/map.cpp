@@ -1,5 +1,5 @@
 
-#include "../inc/map.hpp"
+#include "map.hpp"
 
 Mapa::Mapa(){
   linhas = 17;
